@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
 
-export class HomeScreen extends React.Component {
-    static navigationOptions = { title: 'SP' };
+export class LessonScreen extends React.Component {
+    static navigationOptions = { title: 'Lesson' };
     
     constructor() {
         super();
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows(['Exam', 'Tutorial']),
+            dataSource: ds.cloneWithRows(['Lesson 1', 'Lesson 2']),
         };
     }
 
-    _onPressRow(rowID, rowData) {
-        /* rowData.isSelect = !rowData.isSelect;
-         var dataClone = this.state.data;
-         dataClone[rowID] = rowData;
-         this.setState({
-             data: dataClone
-         });*/
-        // console.log(rowData);
-        navigate('Standard', { name: 'Jane' });
-     }
-   
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -36,12 +25,10 @@ export class HomeScreen extends React.Component {
     _renderRow(rowData, rowID) {
         const { navigate } = this.props.navigation;
         return (
-            /*<TouchableHighlight onPress={this._onPressRow.bind(rowID, rowData)}>*/
-
             <TouchableHighlight 
             underlayColor='transparent'
             style = {styles.container} 
-            onPress={ ()=>  navigate('Standard', { name: rowData})}>    
+            onPress={ ()=>  navigate('Content', { name: rowData})}>    
                 <View>
                     <Text style={styles.text}>{rowData}</Text>
                 </View>
