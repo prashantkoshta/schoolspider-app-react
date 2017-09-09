@@ -1,3 +1,7 @@
 node_modules/
 .expo/
 npm-debug.*
+ios/build
+android/build
+.expo
+.vscode
