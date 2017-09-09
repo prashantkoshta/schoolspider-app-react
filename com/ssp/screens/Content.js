@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
     StyleSheet,
     TouchableHighlight,
@@ -9,14 +9,23 @@ import {
 
 import Pdf from 'react-native-pdf';
 
-export default class ContentScreen extends React.Component {
+export class ContentScreen extends React.Component {
+   
     constructor(props) {
         super(props);
         this.state = {
             page: 1,
             pageCount: 1,
+            pagePdfUrl:this.props.pdfURL
         };
         this.pdf = null;
+        console.log("###    pagesData   ###",this.props.pdfURL);
+    }
+
+    getInitialState() {
+        return {
+            pdfURL: ""
+        };
     }
 
     componentDidMount() {
@@ -42,7 +51,8 @@ export default class ContentScreen extends React.Component {
     }
 
     render() {
-        let source = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true};
+        let source = {uri:this.state.pagePdfUrl,cache:true};
+        //let source = {uri:'http://schoolspider.in/School/app-content/ryan-class1english5-1.pdf',cache:true};
         //let source = require('./test.pdf');  // ios only
         //let source = {uri:'bundle-assets://test.pdf'};
 

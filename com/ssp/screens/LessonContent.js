@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
 import {AppConfig} from '../AppConfig';
 
-export class SubjectScreen extends React.Component {
-    static navigationOptions = { title: 'Subject' };
+import {ContentData} from './ContentData';
+
+export class LessonContentScreen extends React.Component {
+    static navigationOptions = { title: 'Lesson Title' };
     static config;
     routeParams;
     constructor(props) {
@@ -39,19 +41,20 @@ export class SubjectScreen extends React.Component {
                 {
                     "$match": {
                         "class": this.routeParams.item.class,
+                        "subject": this.routeParams.item.subject,
+                        "lesson": this.routeParams.item.lesson,
                         "type": this.routeParams.item.type
                     }
                 },
                 {
                     "$group": {
-                        "_id": "$subject",
+                        "_id": "$topic",
                         "id": { "$first": "$_id" },
                         "class": { "$first": "$class" },
                         "class_title": { "$first": "$class_title" },
                         "subject": { "$first": "$subject" },
                         "lesson": { "$first": "$lesson" },
-                        "topic": { "$first": "$topic" },
-                        "type": { "$first": "$type" }
+                        "refurls": { "$first": "$refurls" }
                     }
                 },
                 {
@@ -61,17 +64,17 @@ export class SubjectScreen extends React.Component {
                         "class_title": "$class_title",
                         "subject": "$subject",
                         "lesson": "$lesson",
-                        "topic": "$topic",
-                        "type": "$type"
+                        "refurls": "$refurls"
                     }
                 },
                 {
                     "$sort": {
-                        "subject": 1
+                        "lesson": 1
                     }
                 }
             ]
         };
+
 
         fetch(this.appConfig.getEndPoint()+'/getDataAggregate',{
             method: "POST",
@@ -96,35 +99,16 @@ export class SubjectScreen extends React.Component {
           
       }
 
-
     render() {
             const { navigate } = this.props.navigation;
             if (!this.state.isLoading) {
                 return (
-                    <ListView
-                    dataSource={this.state.dataSource}
-                    renderRow = {this._renderRow.bind(this)}
-                    />
+                    <ContentData pagesData={this.state.items}/>
                 )
             }else{
                 return null;
             }
     }
-
-    _renderRow(rowData, rowID) {
-        const { navigate } = this.props.navigation;
-        return (
-            <TouchableHighlight 
-            underlayColor='transparent'
-            style = {styles.container} 
-            onPress={ ()=>  navigate('Lesson', {item: rowData})}>    
-                <View>
-                    <Text style={styles.text}>{rowData.subject}</Text>
-                </View>
-            </TouchableHighlight>
-        );
-    }
-
     
 }
 
