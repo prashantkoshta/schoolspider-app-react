@@ -92,7 +92,7 @@ export class ContentData extends React.Component {
             directionalOffsetThreshold: 80
           };
 
-        let source = {uri:this.state.currentUrl,cache:true}; 
+        let source = {uri:this.state.currentUrl,cache:false}; 
 
         return (
             <GestureRecognizer
