@@ -1,27 +1,23 @@
-import React from 'react';
-import {
-    StyleSheet,
-    TouchableHighlight,
-    Dimensions,
-    View,
-    Text
-} from 'react-native';
-
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
 import Pdf from 'react-native-pdf';
 
-export default class ContentScreen extends React.Component {
-    constructor(props) {
-        super(props);
+export class ContentScreen extends React.Component {
+    static navigationOptions = { title: 'Lesson Name' };
+    
+    constructor() {
+        super();
+        //"http://schoolspider.in/School/app-content/ryan-class1english5-1.pdf
         this.state = {
             page: 1,
             pageCount: 1,
         };
         this.pdf = null;
     }
-
+ 
     componentDidMount() {
     }
-
+ 
     prePage=()=>{
         if (this.pdf){
             let prePage = this.state.page>1?this.state.page-1:1;
@@ -30,7 +26,7 @@ export default class ContentScreen extends React.Component {
             console.log(`prePage: ${prePage}`);
         }
     }
-
+ 
     nextPage=()=>{
         if (this.pdf){
             let nextPage = this.state.page+1>this.state.pageCount?this.state.pageCount:this.state.page+1;
@@ -38,16 +34,15 @@ export default class ContentScreen extends React.Component {
             this.setState({page:nextPage});
             console.log(`nextPage: ${nextPage}`);
         }
-
+ 
     }
 
     render() {
-        let source = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true};
-        //let source = require('./test.pdf');  // ios only
+        let source = {uri:'https://www.irs.gov/pub/irs-pdf/fw2.pdf',cache:true};
         //let source = {uri:'bundle-assets://test.pdf'};
-
-        //let source = {uri:'file:///sdcard/test.pdf'};
-
+        //let source = require('./test.pdf'); //ios only
+        //let source = {uri:"data:application/pdf;base64, ..."}; // this is a dummy
+ 
         return (
             <View style={styles.container}>
                 <View style={{flexDirection:'row'}}>
@@ -61,7 +56,6 @@ export default class ContentScreen extends React.Component {
                 <Pdf ref={(pdf)=>{this.pdf = pdf;}}
                     source={source}
                     page={1}
-                    scale={1}
                     horizontal={false}
                     onLoadComplete={(pageCount)=>{
                         this.setState({pageCount: pageCount});
@@ -79,7 +73,7 @@ export default class ContentScreen extends React.Component {
         )
   }
 }
-
+ 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
