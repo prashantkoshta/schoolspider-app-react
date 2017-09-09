@@ -9,7 +9,7 @@ import {
 
 import Pdf from 'react-native-pdf';
 
-export class ContentScreen extends React.Component {
+export class Content extends React.Component {
    
     constructor(props) {
         super(props);
@@ -51,7 +51,7 @@ export class ContentScreen extends React.Component {
     }
 
     render() {
-        let source = {uri:this.state.pagePdfUrl,cache:true};
+        let source = {uri:this.state.pagePdfUrl,cache:false};
         //let source = {uri:'http://schoolspider.in/School/app-content/ryan-class1english5-1.pdf',cache:true};
         //let source = require('./test.pdf');  // ios only
         //let source = {uri:'bundle-assets://test.pdf'};
@@ -60,14 +60,6 @@ export class ContentScreen extends React.Component {
 
         return (
             <View style={styles.container}>
-                <View style={{flexDirection:'row'}}>
-                    <TouchableHighlight  disabled={this.state.page==1} style={this.state.page==1?styles.btnDisable:styles.btn} onPress={()=>this.prePage()}>
-                        <Text style={styles.btnText}>{'Previous'}</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight  disabled={this.state.page==this.state.pageCount} style={this.state.page==this.state.pageCount?styles.btnDisable:styles.btn}  onPress={()=>this.nextPage()}>
-                        <Text style={styles.btnText}>{'Next'}</Text>
-                    </TouchableHighlight>
-                </View>
                 <Pdf ref={(pdf)=>{this.pdf = pdf;}}
                     source={source}
                     page={1}
@@ -87,6 +79,19 @@ export class ContentScreen extends React.Component {
                     style={styles.pdf}/>
             </View>
         )
+
+        /*
+
+        <View style={{flexDirection:'row'}}>
+                    <TouchableHighlight  disabled={this.state.page==1} style={this.state.page==1?styles.btnDisable:styles.btn} onPress={()=>this.prePage()}>
+                        <Text style={styles.btnText}>{'Previous'}</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight  disabled={this.state.page==this.state.pageCount} style={this.state.page==this.state.pageCount?styles.btnDisable:styles.btn}  onPress={()=>this.nextPage()}>
+                        <Text style={styles.btnText}>{'Next'}</Text>
+                    </TouchableHighlight>
+                </View>
+
+                */
   }
 }
 
@@ -95,23 +100,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        marginTop: 25,
-    },
-    btn: {
-        margin: 5,
-        padding:5,
-        backgroundColor: "blue",
-    },
-    btnDisable: {
-        margin: 5,
-        padding:5,
-        backgroundColor: "gray",
-    },
-    btnText: {
-        color: "#FFF",
+        margin: 0,
     },
     pdf: {
         flex:1,
+        margin: 0,
         width:Dimensions.get('window').width,
     }
 });

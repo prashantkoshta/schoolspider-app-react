@@ -5,7 +5,7 @@ import {AppConfig} from '../AppConfig';
 import {ContentData} from './ContentData';
 
 export class LessonContentScreen extends React.Component {
-    static navigationOptions = { title: 'Lesson Title' };
+    static navigationOptions = { title: 'Lesson' };
     static config;
     routeParams;
     constructor(props) {

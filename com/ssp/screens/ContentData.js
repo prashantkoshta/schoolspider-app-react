@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
+import {StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight ,Dimensions } from 'react-native';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
-import {Content} from './Content';
+import Pdf from 'react-native-pdf';
+
 import {AppConfig} from '../AppConfig';
 
 export class ContentData extends React.Component {
@@ -9,14 +10,10 @@ export class ContentData extends React.Component {
     constructor(props) {
         super(props);
         this.appConfig = new AppConfig();
-
-        console.log("###    pagesData   ###",this.props.pagesData[0]);
-
         let page_Data = this.props.pagesData[0];
-
-        console.log("###    refurls   ###",page_Data["refurls"]);
-
         this.state = {
+            page: 1,
+            pageCount: 1,
             items:page_Data.refurls,
             selectedIndex:0,
             currentUrl:page_Data.refurls[0],
@@ -35,6 +32,7 @@ export class ContentData extends React.Component {
     componentDidMount() {
        
     }
+
 
     onSwipe(gestureName, gestureState) {
         const {SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
@@ -68,6 +66,25 @@ export class ContentData extends React.Component {
         }
     }
 
+    prePage=()=>{
+        if (this.pdf){
+            let prePage = this.state.page>1?this.state.page-1:1;
+            this.pdf.setNativeProps({page: prePage});
+            this.setState({page:prePage});
+            console.log(`prePage: ${prePage}`);
+        }
+    }
+
+    nextPage=()=>{
+        if (this.pdf){
+            let nextPage = this.state.page+1>this.state.pageCount?this.state.pageCount:this.state.page+1;
+            this.pdf.setNativeProps({page: nextPage});
+            this.setState({page:nextPage});
+            console.log(`nextPage: ${nextPage}`);
+        }
+
+    }
+
 
     render() {
         const config = {
@@ -75,16 +92,46 @@ export class ContentData extends React.Component {
             directionalOffsetThreshold: 80
           };
 
+        let source = {uri:this.state.currentUrl,cache:true}; 
+
         return (
             <GestureRecognizer
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}
                 config={config}
                 style={styles.container}>
-                <Text style={styles.text}>{this.state.currentUrl}</Text>
-                <Text>onSwipe callback received gesture: {this.state.gestureName}</Text>
-                <Content pdfURL={this.state.currentUrl} />
+
+                <Pdf ref={(pdf)=>{this.pdf = pdf;}}
+                    source={source}
+                    page={1}
+                    scale={1}
+                    horizontal={false}
+                    onLoadComplete={(pageCount)=>{
+                        this.setState({pageCount: pageCount});
+                        console.log(`total page count: ${pageCount}`);
+                    }}
+                    onPageChanged={(page,pageCount)=>{
+                        this.setState({page:page});
+                        console.log(`current page: ${page}`);
+                    }}
+                    onError={(error)=>{
+                        console.log(error);
+                    }}
+                    style={styles.pdf}/>
+
             </GestureRecognizer>
         )
+
+        /*
+
+            <GestureRecognizer
+                onSwipe={(direction, state) => this.onSwipe(direction, state)}
+                config={config}
+                style={styles.container}>
+                <Text style={styles.text}>{this.state.currentUrl}</Text>
+                <Content pdfURL={this.state.currentUrl}></Content>
+            </GestureRecognizer>
+
+        */
            
     }    
 }
@@ -100,4 +147,8 @@ const styles = StyleSheet.create({
         marginLeft: 12,
         fontSize: 22      
     },
+    pdf: {
+        flex:1,
+        width:Dimensions.get('window').width,
+    }
 });
