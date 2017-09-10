@@ -1,7 +1,18 @@
 export class AppConfig {
-    END_POINT_URL= "https://sspider-api.herokuapp.com/spiderapi";
+    static configuration = {};
+    static isAppLoaded = false;
+    constructor(){
+        
+    }
+    static setConfig(o){
+        AppConfig.configuration = o;
+        AppConfig.isAppLoaded = true;
+    };
+    static getConfig(){
+        return AppConfig.configuration;
+    }
 
-    getEndPoint(){
-        return this.END_POINT_URL;
+    static getScreenDataById(screenId){
+        return this.configuration[screenId]
     }
 }

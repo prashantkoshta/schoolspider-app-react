@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
-import {AppConfig} from '../AppConfig';
+import { StackNavigator } from 'react-navigation';
+import {AppConstants} from './../utils/AppConstants'
+import {AppConfig} from './../AppConfig'
 
-import {ContentData} from './ContentData';
+//import {ContentData} from './ContentData';
 
 export class LessonContentScreen extends React.Component {
-    static navigationOptions = { title: 'Lesson' };
+
+    static navigationOptions = ({ navigation }) => {
+        const {state, setParams} = navigation;
+        let rParams = navigation.state.params;
+        return {
+            title: `${rParams.item.lesson}`,
+            headerRight: (
+                <Text style={styles.pageno_text}>{rParams.pageNos}</Text>
+            )
+        };
+    };
+
+
     static config;
     routeParams;
     constructor(props) {
         super(props);
         this.routeParams = this.props.navigation.state.params;
-        this.appConfig = new AppConfig();
+        console.log("###    this.props.navigation.state     ###",this.props.navigation.state);
         this.state = {
             isLoading:true,
-            items:[]
+            items:[],
+            pageNos:""
         };
     }
 
@@ -76,7 +91,7 @@ export class LessonContentScreen extends React.Component {
         };
 
 
-        fetch(this.appConfig.getEndPoint()+'/getDataAggregate',{
+        fetch(AppConstants.END_POINT_URL+'/getDataAggregate',{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -93,17 +108,26 @@ export class LessonContentScreen extends React.Component {
             },function () {
                 console.log(this.state.isLoading);
             });
-
           })
           .done();
           
       }
-
+    
+    onPageUpdate(currentPage,totalPage){
+        console.log("############");
+        let t = currentPage+"/"+totalPage;
+       // this.props.navigation.params["pageNos"] = "123";
+        //pageNos:t
+        /*this.props.navigation.setParams({
+            pageNos:t
+        });*/
+    }  
     render() {
             const { navigate } = this.props.navigation;
             if (!this.state.isLoading) {
                 return (
-                    <ContentData pagesData={this.state.items}/>
+                   //<ContentData pagesData={this.state.items} onPageUpdate={this.onPageUpdate}/>
+                   null
                 )
             }else{
                 return null;
@@ -123,4 +147,8 @@ const styles = StyleSheet.create({
         marginLeft: 12,
         fontSize: 22      
     },
+    pageno_text:{
+        fontSize:12,
+        margin:10
+    }
 });

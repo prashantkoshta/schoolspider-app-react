@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlig
 import {AppConstants} from './../utils/AppConstants'
 import {AppConfig} from './../AppConfig'
 
-export class StandardScreen extends React.Component {
+export class GenaricListScreen extends React.Component {
     static navigationOptions = { title: 'Class' };
     static config;
     routeParams;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
-import {AppConfig} from '../AppConfig';
+import {AppConstants} from './../utils/AppConstants'
+import {AppConfig} from './../AppConfig'
 
 export class SubjectScreen extends React.Component {
     static navigationOptions = { title: 'Subject' };
@@ -9,7 +10,6 @@ export class SubjectScreen extends React.Component {
     constructor(props) {
         super(props);
         this.routeParams = this.props.navigation.state.params;
-        this.appConfig = new AppConfig();
         this.state = {
             isLoading:true,
             items:[]
@@ -73,7 +73,7 @@ export class SubjectScreen extends React.Component {
             ]
         };
 
-        fetch(this.appConfig.getEndPoint()+'/getDataAggregate',{
+        fetch(AppConstants.END_POINT_URL+'/getDataAggregate',{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -102,8 +102,10 @@ export class SubjectScreen extends React.Component {
             if (!this.state.isLoading) {
                 return (
                     <ListView
+                    style={styles.container}
                     dataSource={this.state.dataSource}
                     renderRow = {this._renderRow.bind(this)}
+                    renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
                     />
                 )
             }else{
@@ -129,14 +131,22 @@ export class SubjectScreen extends React.Component {
 }
 
 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 8,
-        flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
+        margin:0,
+        paddingTop:8,
+        paddingBottom:8
     },
     text: {
         marginLeft: 12,
         fontSize: 22      
+    },
+    separator: {
+        flex: 1,
+        height: StyleSheet.hairlineWidth,
+        backgroundColor: '#E0E0E0',
     },
 });

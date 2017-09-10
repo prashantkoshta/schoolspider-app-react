@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
-import {AppConfig} from '../AppConfig';
+import {AppConstants} from './../utils/AppConstants'
+import {AppConfig} from './../AppConfig'
 
 export class HomeScreen extends React.Component {
     static navigationOptions = { title: 'Home' };
     static config;
+    routeParams;
     constructor(props) {
         super(props);
-        
-        this.appConfig = new AppConfig();
+        this.routeParams = this.props.navigation.state.params;
         this.state = {
             isLoading:true,
             items:[]
@@ -23,46 +24,14 @@ export class HomeScreen extends React.Component {
             return hasChanged;
           }
         });
-        this.state = {
-            datasource:datasource,
-            isLoading:true,
-            items:[]
-        };
-        this.fetchData();
+        this.setState({
+            dataSource: datasource.cloneWithRows(this.routeParams.item.data),
+            isLoading: false,
+            items: this.routeParams.item.data
+        },function () {
+            //console.log(this.state.isLoading);
+        });
     }
-
-   
-    fetchData() {
-        var data = {
-            "collection": "appconfig",
-            "querytype": "findone",
-            "query": {
-                "appid": "schoolspider"
-            }
-        };
-
-        fetch(this.appConfig.getEndPoint()+'/fetchData',{
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify(data)
-          })
-          .then((response) => response.json())
-          .then((responseData) => {
-            this.setState({
-                dataSource: this.state.datasource.cloneWithRows(responseData.itemScreen001.data),
-                isLoading: !this.state.isLoading,
-                items: responseData.itemScreen001.data
-            },function () {
-                console.log(this.state.isLoading);
-            });
-
-          })
-          .done();
-          
-      }
 
     _onPressRow(rowID, rowData) {
         /* rowData.isSelect = !rowData.isSelect;
@@ -80,8 +49,10 @@ export class HomeScreen extends React.Component {
         if (!this.state.isLoading) {
             return (
                 <ListView
+                style={styles.container}
                 dataSource={this.state.dataSource}
                 renderRow = {this._renderRow.bind(this)}
+                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
                 />
             )
         }else{
@@ -111,11 +82,18 @@ export class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 8,
-        flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
+        margin:0,
+        paddingTop:8,
+        paddingBottom:8
     },
     text: {
         marginLeft: 12,
         fontSize: 22      
+    },
+    separator: {
+        flex: 1,
+        height: StyleSheet.hairlineWidth,
+        backgroundColor: '#E0E0E0',
     },
 });

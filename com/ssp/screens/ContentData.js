@@ -3,13 +3,13 @@ import {StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighligh
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import Pdf from 'react-native-pdf';
 
-import {AppConfig} from '../AppConfig';
+import {AppConstants} from './../utils/AppConstants'
+import {AppConfig} from './../AppConfig'
 
 export class ContentData extends React.Component {
     static config;
     constructor(props) {
         super(props);
-        this.appConfig = new AppConfig();
         let page_Data = this.props.pagesData[0];
         this.state = {
             page: 1,
@@ -22,7 +22,6 @@ export class ContentData extends React.Component {
         };
         
     }
-
     getInitialState() {
         return {
             pagesData: []
@@ -30,7 +29,7 @@ export class ContentData extends React.Component {
     }
 
     componentDidMount() {
-       
+        this.props.onPageUpdate(this.state.selectedIndex+1,this.state.maxCount);
     }
 
 
@@ -63,6 +62,7 @@ export class ContentData extends React.Component {
                 selectedIndex: n,
                 currentUrl:this.state.items[n]
             });
+            this.props.onPageUpdate(this.state.selectedIndex+1,this.state.maxCount);
         }
     }
 
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 8,
         flexDirection: 'row',
+        backgroundColor: '#FFFFFF',
     },
     text: {
         marginLeft: 12,
