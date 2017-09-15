@@ -39,7 +39,8 @@ export class SubjectScreen extends React.Component {
                 {
                     "$match": {
                         "class": this.routeParams.item.class,
-                        "type": this.routeParams.item.type
+                        "term":this.routeParams.item.ierm,
+                        "type": this.routeParams.item.type,
                     }
                 },
                 {
@@ -48,6 +49,8 @@ export class SubjectScreen extends React.Component {
                         "id": { "$first": "$_id" },
                         "class": { "$first": "$class" },
                         "class_title": { "$first": "$class_title" },
+                        "term": { "$first": "$term" },
+                        "term_title": { "$first": "$term_title" },
                         "subject": { "$first": "$subject" },
                         "lesson": { "$first": "$lesson" },
                         "topic": { "$first": "$topic" },
@@ -59,6 +62,8 @@ export class SubjectScreen extends React.Component {
                         "_id": "$id",
                         "class": "$class",
                         "class_title": "$class_title",
+                        "term": "$term",
+                        "term_title": "$term_title",
                         "subject": "$subject",
                         "lesson": "$lesson",
                         "topic": "$topic",

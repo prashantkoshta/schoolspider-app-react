@@ -25,7 +25,9 @@ npm install react-native-fetch-blob --save
 react-native link react-native-fetch-blob
 
 
-
+## To Run App
+Run in Simulator
+npm run ios  
 
 
 

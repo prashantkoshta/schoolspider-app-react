@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlight } from 'react-native';
+import {ListSubItem} from './../component/ListSubItem';
 import {AppConstants} from './../utils/AppConstants'
 import {AppConfig} from './../AppConfig'
 
@@ -39,43 +40,21 @@ export class StandardScreen extends React.Component {
         var data = {
             "query":
             [
-                {
-                    "$match":{
-                            "type":this.routeParams.item.role
-                        }
-                },
-                {
-                    "$group":{
-                            "_id": "$class",
-                            "id": { "$first": "$_id" },
-                            "class": { "$first": "$class" },
-                            "class_title": { "$first": "$class_title" },
-                            "subject": { "$first": "$subject" },
-                            "lesson": { "$first": "$lesson" },
-                            "topic": { "$first": "$topic" },
-                            "type": { "$first": "$type" }
-                        }
-                },
-                {
-                  "$project":{
-                      "_id":"$id",
-                      "class":"$class",
-                      "class_title":"$class_title",
-                      "subject":"$subject",
-                      "lesson":"$lesson",
-                      "topic":"$topic",
-                      "type":"$type"
-                      }
-                  } ,
-                {
-                  "$sort":{
-                            "class":1
-                      }
-                  }  
-            ]
-            
+                { "$match": {  "type": "tutorial" } },
+                { "$group": {
+                   "_id": { 
+                           "class": "$class",
+                           "term":"$term",
+                           "term_title":"$term_title",
+                           "class_title":"$class_title",
+                           "type":"$type"
+                       
+                       }
+                 } },
+                { "$sort": { "_id.class": 1, "_id.term":1 } }
+          ]
         };
-        fetch(AppConstants.END_POINT_URL+'/getDataAggregate',{
+        fetch(AppConstants.END_POINT_URL+'/getClassAndTerms',{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -128,19 +107,18 @@ export class StandardScreen extends React.Component {
     _renderRow(rowData, rowID) {
         const { navigate } = this.props.navigation;
         return (
-            /*<TouchableHighlight onPress={this._onPressRow.bind(rowID, rowData)}>*/
             <TouchableHighlight 
             underlayColor='transparent'
-            style = {styles.container} 
-            onPress={ ()=>  navigate('Subject', {item: rowData})}>    
+            style = {styles.container}>    
                 <View>
                     <Text style={styles.text}>{rowData.class_title}</Text>
+                    <ListSubItem items={rowData.terms} onSelectedItem={(itemData)=>  navigate('Subject', {item: itemData})} />
                 </View>
             </TouchableHighlight>
         );
     }
 
-    
+   
 }
 
 const styles = StyleSheet.create({
