@@ -41,7 +41,7 @@ export class LessonScreen extends React.Component {
                 {
                     "$match": {
                         "class": this.routeParams.item.class,
-                        "term":this.routeParams.item.ierm,
+                        "term":this.routeParams.item.term,
                         "subject": this.routeParams.item.subject,
                         "type": this.routeParams.item.type
                     }
@@ -53,12 +53,10 @@ export class LessonScreen extends React.Component {
                         "class": { "$first": "$class" },
                         "class_title": { "$first": "$class_title" },
                         "term": { "$first": "$term" },
-                        "term_title": { "$first": "$term_title" },
                         "subject": { "$first": "$subject" },
                         "lesson": { "$first": "$lesson" },
                         "topic": { "$first": "$topic" },
                         "type": { "$first": "$type" },
-                        "term": { "$first": "$term" },
                         "term_title": { "$first": "$term_title" }
                     }
                 },
@@ -68,12 +66,10 @@ export class LessonScreen extends React.Component {
                         "class": "$class",
                         "class_title": "$class_title",
                         "term": "$term",
-                        "term_title": "$term_title",
                         "subject": "$subject",
                         "lesson": "$lesson",
                         "topic": "$topic",
                         "type": "$type",
-                        "term": "$term",
                         "term_title": "$term_title"
                     }
                 },

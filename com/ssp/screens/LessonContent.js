@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import {AppConstants} from './../utils/AppConstants'
 import {AppConfig} from './../AppConfig'
 
-//import {ContentData} from './ContentData';
+import {ContentData} from './ContentData';
 
 export class LessonContentScreen extends React.Component {
 
@@ -126,8 +126,8 @@ export class LessonContentScreen extends React.Component {
             const { navigate } = this.props.navigation;
             if (!this.state.isLoading) {
                 return (
-                   //<ContentData pagesData={this.state.items} onPageUpdate={this.onPageUpdate}/>
-                   null
+                  <ContentData pagesData={this.state.items} onPageUpdate={this.onPageUpdate}/>
+                 //  null
                 )
             }else{
                 return null;

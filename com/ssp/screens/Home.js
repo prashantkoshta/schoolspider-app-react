@@ -3,8 +3,11 @@ import { StyleSheet, Text, View, Image, Button, Alert, ListView,TouchableHighlig
 import {AppConstants} from './../utils/AppConstants'
 import {AppConfig} from './../AppConfig'
 
+
+
 export class HomeScreen extends React.Component {
-    static navigationOptions = { title: 'Home' };
+    //static navigationOptions = { title:AppConfig.getScreenDataById(AppConstants.HOME_SCREEN).title};
+    static navigationOptions = { title:"Home"};
     static config;
     routeParams;
     constructor(props) {

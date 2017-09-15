@@ -39,7 +39,7 @@ export class SubjectScreen extends React.Component {
                 {
                     "$match": {
                         "class": this.routeParams.item.class,
-                        "term":this.routeParams.item.ierm,
+                        "term":this.routeParams.item.term,
                         "type": this.routeParams.item.type,
                     }
                 },
