@@ -5,6 +5,10 @@ import {AppConstants} from './../utils/AppConstants'
 import {AppConfig} from './../AppConfig'
 
 export class StandardScreen extends React.Component {
+    /*static navigationOptions  = ({ navigation, screenProps }) => ({
+        title: navigation.state.params.count + "'s Profile!",
+        headerRight: <Text>Hello123</Text>
+    });*/
     static navigationOptions = { title: 'Class' };
     static config;
     routeParams;
@@ -33,6 +37,8 @@ export class StandardScreen extends React.Component {
             items:[]
         };
         this.fetchData();
+        
+       // this.props.navigation.setParams({ count: "1000" });
     }
 
    
@@ -68,6 +74,7 @@ export class StandardScreen extends React.Component {
                 dataSource: this.state.datasource.cloneWithRows(responseData),
                 isLoading: !this.state.isLoading,
                 items: responseData
+                
             },function () {
                 console.log(this.state.isLoading);
             });

@@ -57,7 +57,8 @@ export class LessonScreen extends React.Component {
                         "lesson": { "$first": "$lesson" },
                         "topic": { "$first": "$topic" },
                         "type": { "$first": "$type" },
-                        "term_title": { "$first": "$term_title" }
+                        "term_title": { "$first": "$term_title" },
+                        "lesson_index": { "$first": "$lesson_index" }
                     }
                 },
                 {
@@ -70,13 +71,13 @@ export class LessonScreen extends React.Component {
                         "lesson": "$lesson",
                         "topic": "$topic",
                         "type": "$type",
-                        "term_title": "$term_title"
+                        "term_title": "$term_title",
+                        "lesson_index":"$lesson_index"
                     }
                 },
                 {
                     "$sort": {
-                        "term": 1,
-                        "lesson":1
+                        "lesson_index": 1
                     }
                 }
             ]

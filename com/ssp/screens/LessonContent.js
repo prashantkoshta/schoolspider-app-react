@@ -8,24 +8,19 @@ import {ContentData} from './ContentData';
 
 export class LessonContentScreen extends React.Component {
 
-    static navigationOptions = ({ navigation }) => {
-        const {state, setParams} = navigation;
-        let rParams = navigation.state.params;
-        return {
-            title: `${rParams.item.lesson}`,
-            headerRight: (
-                <Text style={styles.pageno_text}>{rParams.pageNos}</Text>
-            )
-        };
-    };
+    static navigationOptions  = ({ navigation, screenProps }) => ({
+        title: navigation.state.params.item.lesson,
+        headerRight: <Text style={styles.pageno_text}>{navigation.state.params.pageNos}</Text>
+    });
 
 
     static config;
     routeParams;
+    static refNavigation;
     constructor(props) {
         super(props);
         this.routeParams = this.props.navigation.state.params;
-        console.log("###    this.props.navigation.state     ###",this.props.navigation.state);
+       // console.log("###    this.props.navigation.state     ###",this.props.navigation.state);
         this.state = {
             isLoading:true,
             items:[],
@@ -47,6 +42,7 @@ export class LessonContentScreen extends React.Component {
             items:[]
         };
         this.fetchData();
+        refNavigation  = this.props.navigation;
     }
 
    
@@ -114,20 +110,16 @@ export class LessonContentScreen extends React.Component {
       }
     
     onPageUpdate(currentPage,totalPage){
-        console.log("############");
         let t = currentPage+"/"+totalPage;
-       // this.props.navigation.params["pageNos"] = "123";
-        //pageNos:t
-        /*this.props.navigation.setParams({
-            pageNos:t
-        });*/
+        refNavigation.setParams({ pageNos: t});
     }  
+
     render() {
             const { navigate } = this.props.navigation;
             if (!this.state.isLoading) {
                 return (
                   <ContentData pagesData={this.state.items} onPageUpdate={this.onPageUpdate}/>
-                 //  null
+                 // null
                 )
             }else{
                 return null;
@@ -149,6 +141,7 @@ const styles = StyleSheet.create({
     },
     pageno_text:{
         fontSize:12,
-        margin:10
+        margin:12,
+        marginTop:32
     }
 });

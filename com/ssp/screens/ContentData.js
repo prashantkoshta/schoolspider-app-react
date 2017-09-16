@@ -20,7 +20,6 @@ export class ContentData extends React.Component {
             gestureName: 'none',
             maxCount:page_Data.refurls.length
         };
-        
     }
     getInitialState() {
         return {
@@ -55,9 +54,12 @@ export class ContentData extends React.Component {
     }
 
     updateSelectedPage(n){
-        if(n == -1  || n == this.state.maxCount) return;
-        //
-        if(n<=this.state.selectedIndex < this.state.maxCount){
+       // console.log(n+"<><><><><>"+this.state.maxCount);
+        if(n<=0){
+            this.props.onPageUpdate(1,this.state.maxCount);
+        }else if(n+1 == this.state.maxCount) {
+            this.props.onPageUpdate(this.state.maxCount,this.state.maxCount);
+        }else if(n<this.state.maxCount){
             this.setState({
                 selectedIndex: n,
                 currentUrl:this.state.items[n]

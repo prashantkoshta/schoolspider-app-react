@@ -40,7 +40,7 @@ export class SubjectScreen extends React.Component {
                     "$match": {
                         "class": this.routeParams.item.class,
                         "term":this.routeParams.item.term,
-                        "type": this.routeParams.item.type,
+                        "type": this.routeParams.item.type
                     }
                 },
                 {
@@ -54,7 +54,8 @@ export class SubjectScreen extends React.Component {
                         "subject": { "$first": "$subject" },
                         "lesson": { "$first": "$lesson" },
                         "topic": { "$first": "$topic" },
-                        "type": { "$first": "$type" }
+                        "type": { "$first": "$type" },
+                        "sub_index": { "$first": "$sub_index" }
                     }
                 },
                 {
@@ -67,12 +68,13 @@ export class SubjectScreen extends React.Component {
                         "subject": "$subject",
                         "lesson": "$lesson",
                         "topic": "$topic",
-                        "type": "$type"
+                        "type": "$type",
+                        "sub_index": "$sub_index"
                     }
                 },
                 {
                     "$sort": {
-                        "subject": 1
+                        "sub_index": 1
                     }
                 }
             ]
