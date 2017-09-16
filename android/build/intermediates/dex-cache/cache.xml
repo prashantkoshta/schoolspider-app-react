@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.0.1_54b0ce6ca51551318f3790f8fe0969ed0e6accb3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.3.1_869aee30aafeb506d52ca3dbf18ed3cd7df38095/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.3.1_695581725a3b8c5d6cad9671b16c3d03d90c0acf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_4b72565c841c6ab5f2c583fa37a85117f13f93bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.13.0_910cbfdeb72af04da9c9f00a611f9b8df5a7f66c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.6.0_ee6fa2d03ad01bb96c3e1c6dfc61b76d1bf17aed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_b66dae24b5ab4074500ad872cad3a73c06aefd68/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsr305-3.0.0_e87f3f1c1e2c9d0f0877dae43390ef04b588460f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.soloader-soloader-0.1.0_2cbd2a4fb4e900ec24be7abeeac349063d9f0321/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-urlconnection-3.6.0_4118fcc7a29b53dd10e02ef81d7c04f64bdddc5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fbcore-1.0.1_2a850dce821ae505f80cf6a2c84ba3e9903cc491/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-base-1.0.1_94833597cc0c8ff46aa7a9fb74fc0966dc043838/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_6a9f3b70aa5bbd0e0da5bb016075623e51623ea7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_9f4e42184b3cf9aff7dedc3c6bf0ba4f44be5dd3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.github.barteksc/pdfium-android/1.7.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="100c2548728b6c99e002328d3590b750a6afa9e5">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.barteksc-pdfium-android-1.7.0_e45c7a81e5c184c549c438c2af40f3405633b0ea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fresco-1.0.1_b048f0632fa17839121e8f73049f0b7bdf1ba701/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="40c45078c9710f331b76ec511a7c9a2a5641ac13">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ed118ef02738541fe410168e9b32abe4b2c2044b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c2172f83ee65d00e6539bc03711b97cd6eddb6a5">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b2f20ecd1cdcd9f77f6d102010122e5f281ddaed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.3.1_152aab4608e0d6986fd07e3823152f73b584a81b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.3.1_69b6fcb61289ade786a4508e0edd2308c312ff3c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="576b5113887747a7592650ae14d980e1c57983c4">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.react-react-native-0.47.2_0dee44fbebb6848ae7d661478072d5b44cc85792/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.github.barteksc/android-pdf-viewer/2.7.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="acc7f730a7b9cccfc9251d727165bc37bbb8dd67">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.barteksc-android-pdf-viewer-2.7.0_f309e603a442d7713cb7e024c339ff120fbb8da8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.2/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/infer-annotations-4.0_92291c29104b5a8e11015d25a1caa7f9685848fa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_0a489216cd5c303658a48c7d459c7e7bfb7634de/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/staticlayout-proxy-1.0_d5cd7dfe0e7b293332c4a38e09c6dd1ebe1ff432/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-1.0.1_47d700dec8fca38f53157b113b63dce0b7bb3ce2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.3.1_52c6b1d651ebe0114634f4cebae5446ed94242e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.3.1_75f6b27aa23871a317cc03dfff2345be426c51b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="/Users/prashantkoshta/development/schoolspider/schoolspider-app-react/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-drawee-1.0.1_ab6cab18154798290f5a2b087591de9a34dc4b91/classes.dex" />
+    </item>
+
+</items>
